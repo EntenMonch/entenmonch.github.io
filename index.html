@@ -1,17 +1,48 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Ein Beispiel für Eventhändler</title>
-    <script type="text/javascript">
-      function myAlert()
-      {
-          alert("Ich bin Eventhändler....");
-      	return;
+    <title>Meine Webseite</title>
+    <style>
+      /* Styles für den Hintergrund und das Menü */
+      body {
+        background-color: #F0F0F0; /* Hellgrau */
+        font-family: Arial, sans-serif;
       }
-    </script>
+      nav {
+        background-color: #006699; /* Dunkelblau */
+        color: #FFFFFF; /* Weiß */
+        padding: 10px;
+      }
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      nav li {
+        float: left;
+      }
+      nav li a {
+        display: block;
+        color: #FFFFFF;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      nav li a:hover {
+        background-color: #003366; /* Dunkles Blau */
+      }
+    </style>
   </head>
   <body>
-    <span onmouseover="myAlert();">
-   Bewegen Sie Ihre Maus hier, um ein Alarmsignal zu sehen.
-    </span>
+    <nav>
+      <ul>
+        <li><a href="#">Startseite</a></li>
+        <li><a href="#">Über uns</a></li>
+        <li><a href="#">Kontakt</a></li>
+      </ul>
+    </nav>
+    <h1>Willkommen auf meiner Webseite!</h1>
+    <p>Hier ist ein Beispiel-Text.</p>
   </body>
 </html>
