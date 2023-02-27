@@ -4,43 +4,214 @@
 	<title>EntenMönch.de</title>
 	<style>
 		body {
-			background-color: #1a1a1a;
+			background-color: #cfcece;
 			margin: 0;
 			padding: 0;
 		}
 
-		header {
+		header {						
+			position: relative;			
+			padding-top: 50px;
+			width: 100%;
+   			height: 80px;
 			background-color: #1a1a1a;
-			height: 80px;
-			text-align: center;
-			padding-top: 20px;
+		}
+		
+
+		#blur {
+   			position: absolute;
+   			top: 0px;
+   			height: 100px;
+   			width: 100%;
+			}
+		#blur::before {
+   			display: block;   		
+			position: absolute;			
+			
+			width: 100%;
+   			height: 130px;
+			background-size: cover;	
+			background-color: #1a1a1a;
+			background-repeat: no-repeat;
+   			background-image: url("Bilder/BackgroundHeader.png");
+   			background-position: center;
+   		
+			filter: blur(0px);
+			opacity: 0.2;
+   			content: ' ';
+		}
+		#color {
+			position: absolute;
+   			top: 0px;
+   			height: 130px;
+   			width: 100%;
+			background-color: #25094f;
+			opacity: 1;
+		}
+	
+
+		/* WeißLogo */
+		.logo {
+			height: 70px;
+  			overflow: hidden; 
+ 			position: absolute;
+  			top: 65px;
+  			left: 320px;
+  			transform: translate(-50%, -50%);	
+		}
+		/* WeißLogo */
+		.logoweiß {
+			height: 70px;
+  			overflow: hidden; 
+ 			position: absolute;
+  			top: 65px;
+  			left: 190px;
+  			transform: translate(-50%, -50%);	
+		}	
+		/* TextLogo */
+		.textlogo {
+  			height: 70px;
+  			overflow: hidden; 		
+ 			position: absolute;
+  			top: 65px;
+  			left: 130px;
+  			transform: translate(-50%, -50%);
+		}
+		/* LogoZoom */
+		.logozoom img {
+ 			 transition: transform .7s ease;
+			
+		}
+		.logozoom img:hover {
+			
+  			transform: scale(0.95);
+			
+		}
+		
+		nav {
+			background-color: #252525;
+			color: #fff;
+			height: 50px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0 20px;
+			position: fixed;
+			top: 130px;
+			width: 100%;
+			z-index: 1000;
+			transition: all 0.3s ease-in-out;
 			box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);+
 		}
 
-		
-		.logo {
-			width: 80%;
- 			position: absolute;
-  			top: 50%;
-  			left: 50%;
-  			transform: translate(-50%, -50%);
-			
+		nav.shrink {
+			height: 40px;
+			background-color: #1a1a1a;
+			padding: 0 10px;
+			box-shadow: 0px 2px 5px rgba(0,0,0,0.5);
 		}
 
-		h1 {
-			text-align: center;
-			margin-top: 50px;
-			color: #ffffff;
+		nav ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			display: flex;
+			align-items: center;
 		}
+
+		nav ul li {
+			position: relative;
+			margin: 0 10px;
+		}
+
+		nav ul li:hover {
+			background-color: #404040;
+		}
+
+		nav ul li a {
+			display: block;
+			color: #fff;
+			text-decoration: none;
+			padding: 10px;
+			font-size: 16px;
+			transition: all 0.3s ease-in-out;
+		}
+
+		nav ul ul {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			background-color: #1a1a1a;
+			padding: 10px;
+			box-shadow: 0px 2px 5px rgba(0,0,0,0.5);
+			opacity: 0;
+			visibility: hidden;
+			transform: translateY(-10px);
+			transition: all 0.3s ease-in-out;
+		}
+
+		nav ul ul li {
+			width: 200px;
+			margin: 5px 0;
+		}
+
+		nav ul li:hover > ul {
+			display: block;
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(0);
+		}
+
 	</style>
+
 </head>
 <body>
-	<header>
-		<h1 style="font-family:Verdana, Geneva, Tahoma, sans-serif">EntenMönch</h1>
+	<header>	
+	
+		<div id="color"></div>
+		<div id="blur"></div>
 		
-		<div class="logo">
-			<img src="Bilder/logo.png" alt="EntenMönch" widht="200" height="200"  >
+		<div class="logozoom">			
+			<div class="logoweiß">
+				<img src="Bilder/logoweiß.png" alt="EntenMönch" widht="30" height="30">			
+			</div>
+
+			<div class="textlogo">
+				<a href="index.html"> <img src="Bilder/TextLogo.png" alt="EntenMönch" widht="70" height="70" > 	</a>
+			</div>
 		</div>
+
+
+		<div class="logo">
+			<a href="index.html"> <img src="Bilder/logo.png" alt="EntenMönch" widht="70" height="70" > 	</a>
+		</div>
+
+			
+
+		
+		<nav>
+			<ul>
+				<li><a href="#">Startseite</a></li>
+				<li><a href="#">Über uns</a>
+					<ul>
+						<li><a href="#">Unser Team</a></li>
+						<li><a href="#">Geschichte</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Leistungen</a>
+					<ul>
+						<li><a href="#">Webdesign</a></li>
+						<li><a href="#">SEO</a></li>
+						<li><a href="#">Social Media</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Kontakt</a></li>
+			</ul>
+		</nav>
+		  
+		  
+		  
 
 	</header>
 
