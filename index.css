@@ -23,6 +23,7 @@ header {
     transform: translate(-50%, -50%);
     z-index: 1;
     width: 550px;
+    text-align: center;
 }
 nav {
     position: absolute;
