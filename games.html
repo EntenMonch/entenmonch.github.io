@@ -14,18 +14,6 @@ $(function(){
   $("#footer").load("footer.html"); 
 });
 
-/* LAST YT VIDEO*/
-var channelID = "UCcBTQDKnJqfWoSg3Mih_How";
-var reqURL = "https://www.youtube.com/feeds/videos.xml?channel_id=";
-$.getJSON("https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(reqURL)+channelID, function(data) {
-   var link = data.items[0].link;
-   var id = link.substr(link.indexOf("=")+1);
-$("#youtube_video").attr("src","https://youtube.com/embed/"+id + "?controls=0&showinfo=0&rel=0");
-});
-
-
-
-
 </script> 
 
 
@@ -39,7 +27,15 @@ $("#youtube_video").attr("src","https://youtube.com/embed/"+id + "?controls=0&sh
 <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
 
 <style type="text/css">
- 
+.GamesBackground {
+  
+  position: relative;
+  background-color: aqua;
+  width: 100px;
+  height: 100px;
+
+}
+
 </style>
 </head>
 <body>
@@ -47,7 +43,15 @@ $("#youtube_video").attr("src","https://youtube.com/embed/"+id + "?controls=0&sh
 <div id="header"></div>		
     <div class="bodyback">
 
-      <h1>WORK IN PROGRESS</h1>
+      <div class="GamesBackground">
+   
+      </div>
+     
+      <div class="GamesBackground">
+      <h1>The Dark Pictures Anthology: House of Ashes</h1>
+      <img src="games/house-of-ashes-image.png" alt="" width="300px" >
+      </div>
+
 
 
 <div id="footer"></div>
